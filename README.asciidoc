@@ -35,7 +35,7 @@ Building and Testing
 ** Fast-build (does not run `neo4j-gremlin` tests - use with caution): `mvn clean install -DfeelingLucky`
 ** Clean the `.groovy/grapes/org.apache.tinkerpop` directory on build: `mvn clean install -DcleanGrapes`
 * Regenerate test data (only necessary given changes to IO classes): `mvn clean install -Dio` from `tinkergraph-gremlin` directory
-* Build AsciiDocs: `docs/preprocessor/preprocess.sh && mvn process-resources -Dasciidoc`
+* Build AsciiDocs: `docs/preprocessor/preprocess.sh && mvn process-resources -Dasciidoc && rm -rf docs/target`
 * Build JavaDocs: `mvn process-resources -Djavadoc`
 * Check for Apache License headers: `mvn apache-rat:check`
 * Deploy JavaDocs/AsciiDocs: `bin/publish-docs.sh svn-username`

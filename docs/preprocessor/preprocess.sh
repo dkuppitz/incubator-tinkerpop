@@ -27,10 +27,12 @@ if [ ! -f bin/gremlin.sh ]; then
   exit 1
 fi
 
+mkdir -p docs/target
+
 for input in $(find docs/src/ -name "*.asciidoc")
 do
   name=`basename $input`
-  output="docs/${name}"
+  output="docs/target/${name}"
   echo "${input} > ${output}"
   if [ $(grep -c '^\[gremlin' $input) -gt 0 ]; then
     bin/gremlin.sh -e docs/preprocessor/processor.groovy $input > $output
